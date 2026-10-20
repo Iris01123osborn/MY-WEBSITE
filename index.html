@@ -1,19 +1,103 @@
-<html>
+<html lang="en">
 <head>
   <link href="stylesheet.css" rel="stylesheet" type="text/css"/>
-<title> Assignment in class </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Medalist Navbar </title>
 </head>
-<body> 
-  <!-- Header -->
-  <div id="header">
-    <span class="logo icon fa-paper-plane"></span>
-    <h1>edalist</h1>
-    <p>Icho Inori's Journey on Ice
-    <br />
-    Follow the blade, understand figure skating.</p>
-  </div>
+<body>
+  <nav class="navbar">
+    <!-- 左侧：Logo + 导航 -->
+    <div class="nav-left">
+      <div class="logo">Medalist</div>
+      
+      <ul class="nav-links">
+        <li class="nav-item active" data-target="home">
+          home page
+          <span class="arrow up"></span>
+        </li>
+        <li class="nav-item" data-target="her-story">
+          Enter Her Story
+          <span class="arrow down"></span>
+        </li>
+        <li class="nav-item" data-target="glossary">Skating Glossary</li>
+        <li class="nav-item" data-target="weekly-reflection">weekly reflection</li>
+      </ul>
+    </div>
+    </nav>
+  <main class="main-content">
+      <!-- 这里写你的所有正文内容 -->
+     <div class="content-panel active" id="home">  
+      <div class="hero-text">
+        Inori Yuitsuka's Journey on Ice<br>
+        Follow the blade, understand figure skating.
+      </div>
+      <!-- Her Story 内容面板（默认隐藏） -->
+    <div class="content-panel" id="her-story">
+      <h2>Enter Her Story</h2>
+      <p>...</p>
+    </div>
 
-    <h2>This will be an amazing website. </h2>
+    <!-- Skating Glossary 内容面板（默认隐藏） -->
+    <div class="content-panel" id="glossary">
+      <h2>Skating Glossary</h2>
+      <p>...</p>
+    </div>
 
+    <!-- Weekly Reflection 核心内容面板（默认隐藏） -->
+    <div class="content-panel" id="weekly-reflection">
+      <div class="reflection-container">
+        <h2>Weekly Reflection</h2>
+        <div class="reflection-card">
+          <h3>Week 2 </h3>
+          <div class="reflection-block">
+            <h4>Creating Websites</h4>
+            <p>Completed the basic navbar layout and homepage hero section, confirmed the overall visual style of the figure skating theme website.</p>
+          </div>
+          <h3>Week 3 </h3>
+          <div class="reflection-block">
+            <h4>Web Scraping</h4>
+            <p>...</p>
+          </div>
+        </div>
+      </div>
+    </main>
+   
+  
+    
+    <script>
+      // 获取所有导航项和内容面板
+      const navItems = document.querySelectorAll('.nav-item');
+      const contentPanels = document.querySelectorAll('.content-panel');
+  
+      // 给每个导航项绑定点击事件
+      navItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const targetId = item.getAttribute('data-target');
+  
+          // 1. 切换导航项的激活状态
+          navItems.forEach(nav => nav.classList.remove('active'));
+          item.classList.add('active');
+  
+          // 2. 同步切换箭头方向（仅对带箭头的导航项生效）
+          navItems.forEach(nav => {
+            const arrow = nav.querySelector('.arrow');
+            if (arrow) {
+              arrow.classList.remove('up');
+              arrow.classList.add('down');
+            }
+          });
+          const activeArrow = item.querySelector('.arrow');
+          if (activeArrow) {
+            activeArrow.classList.remove('down');
+            activeArrow.classList.add('up');
+          }
+  
+          // 3. 切换内容面板的显示/隐藏
+          contentPanels.forEach(panel => panel.classList.remove('active'));
+          document.getElementById(targetId).classList.add('active');
+        });
+      });
+    </script>
 </body>
 </html>

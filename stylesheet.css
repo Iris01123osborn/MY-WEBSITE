@@ -1,3 +1,81 @@
+.top-nav {
+    margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 左右两端对齐 */
+    padding: 12px 32px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    background: #fff;
+  }
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+.logo {
+    font-size: 40px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1;
+  }
+  .logo::after {
+    content: '.';
+    color: #ec4899; /* 粉色圆点 */
+  }
+
+  /* 导航菜单列表 */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  /* 导航项基础样式 */
+  .nav-item {
+    font-size: 20px;
+    font-weight: 500;
+    color: #0f172a;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 9999px; /* 胶囊型大圆角 */
+    transition: background 0.2s ease;
+  }
+
+  /* 激活态（Products）样式 */
+  .nav-item.active {
+    background-color: #fce7f3; /* 浅粉色背景 */
+    color: #ec4899; /* 粉色文字 */
+  }
+
+  
+
+
+
+
+
+  .top-nav a {
+    color: #fdaaaa;    
+    text-decoration: none; 
+    margin: 0px; 
+    font-size: 16px;
+  }
+  .top-nav a:hover {
+    color: #fbe200; 
+  }
+
+
+  
 body {
     color: gray;
     background: white;
@@ -6,14 +84,14 @@ body {
     margin-right: 10%;
     }
     h1 {
-    color: #457926;
+    color: #fdaaaa;
     font-family: Georgia,"Times New Roman",Times,serif;
     font-size: 2em;
     text-transform: uppercase;
     margin-left: -8%;
     }
     h2 {
-    color: #457926;
+    color: #fdaaaa;
     font-family: Georgia,"Times New Roman",Times,serif;
     font-size: 1.7em;
     border: solid;
